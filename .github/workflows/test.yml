@@ -76,7 +76,10 @@ jobs:
           fi
           
           echo "📤 Uploading testmon data to server..."
-          
+          echo ${REPO_ID}
+          echo ${JOB_ID}
+          echo ${RUN_ID}
+          echo ${github.repository}
           HTTP_CODE=$(curl -w "%{http_code}" -o /tmp/upload_response.json \
             -X POST "${TESTMON_SERVER}/api/client/upload" \
             -F "file=@.testmondata" \
